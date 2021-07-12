@@ -54,8 +54,12 @@ console.log(seattle.avgCookiesperHour);
 seattle.render=function () {
 let parent=document.getElementById('seatle');
 console.log(parent);
+let hElement=document.createElement('h3');
+parent.appendChild(hElement);
+hElement.textContent=`Seattle`
 let ulElement=document.createElement('ul');
 parent.appendChild(ulElement);
+
 
 for (let i = 0; i < 14; i++) {
     // create i
@@ -122,6 +126,9 @@ console.log(tokyo.avgCookiesperHour);
 tokyo.render=function () {
     let parent=document.getElementById('seatle');
     console.log(parent);
+    let hElement=document.createElement('h3');
+parent.appendChild(hElement);
+hElement.textContent=`Tokyo`
     let ulElement=document.createElement('ul');
     parent.appendChild(ulElement);
     
@@ -194,6 +201,9 @@ let Dubai={
     Dubai.render=function () {
         let parent=document.getElementById('seatle');
         console.log(parent);
+        let hElement=document.createElement('h3');
+        parent.appendChild(hElement);
+        hElement.textContent=`Dubai`
         let ulElement=document.createElement('ul');
         parent.appendChild(ulElement);
         
@@ -271,6 +281,9 @@ let paris={
     paris.render=function () {
         let parent=document.getElementById('seatle');
         console.log(parent);
+        let hElement=document.createElement('h3');
+        parent.appendChild(hElement);
+        hElement.textContent=`paris`
         let ulElement=document.createElement('ul');
         parent.appendChild(ulElement);
         
@@ -343,6 +356,9 @@ let Lima={
     Lima.render=function () {
         let parent=document.getElementById('seatle');
         console.log(parent);
+        let hElement=document.createElement('h3');
+        parent.appendChild(hElement);
+        hElement.textContent=`Lima`
         let ulElement=document.createElement('ul');
         parent.appendChild(ulElement);
         
