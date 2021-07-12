@@ -102,12 +102,12 @@ Shop.prototype.render = function () {
         
     }
     
-    for (let j = 0; j <1; j++) {
+     
         let totalsum=document.createElement('th');
         tr.appendChild(totalsum);
         totalsum.textContent=sum
         
-    }
+    
 }
 // console.log(this.avgCookiesperHour= [i]);
 
