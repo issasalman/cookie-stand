@@ -20,7 +20,7 @@ console.log(shop);
 function Shop(location, min, max, avg) {
 
     this.location = location,
-        this.min = min;
+    this.min = min;
     this.max = max;
     this.avg = avg;
     this.randCust = [];
@@ -35,8 +35,7 @@ let Paris = new Shop('Paris', 20, 38, 2.3);
 let Lima = new Shop('Lima', 2, 16, 4.6);
 
 
-// console.log(Seattle.avgCookiesperHour);
-// console.log(shop[0].avgCookiesperHou);
+
 
 
 Shop.prototype.getRandCust = function () {
@@ -57,14 +56,11 @@ Shop.prototype.avgcookie = function () {
 }
 let th;
 let tr;
-let parent
-let table
 let td;
-function header() {
-
-    parent = document.getElementById('seatle');
-    table = document.createElement('table');
+let  parent = document.getElementById('seatle');
+let  table = document.createElement('table');
     parent.appendChild(table);
+function header() {
     tr = document.createElement('tr');
     table.appendChild(tr);
     th = document.createElement('th');
@@ -74,7 +70,7 @@ function header() {
     for (let i = 0; i < 14; i++) {
         th = document.createElement('th');
         tr.appendChild(th);
-        th.textContent = `${hours[i]}`
+        th.textContent = hours[i]
 
     }
     th = document.createElement('th');
@@ -90,14 +86,14 @@ Shop.prototype.render = function () {
     td = document.createElement('td');
     tr.appendChild(td);
 
-    td.textContent = `${this.location}`
+    td.textContent = this.location
     let sum=0
     for (let i = 0; i < 14; i++) {
         
         console.log(this.avgCookiesperHour[i]);
         td = document.createElement('td');
         tr.appendChild(td);
-        td.textContent = `${this.avgCookiesperHour[i]}`
+        td.textContent = this.avgCookiesperHour[i]
        sum=sum+this.avgCookiesperHour[i]
         
     }
@@ -109,7 +105,7 @@ Shop.prototype.render = function () {
         
     
 }
-// console.log(this.avgCookiesperHour= [i]);
+
 
 function footer() {
     let total;
@@ -119,13 +115,13 @@ function footer() {
     th = document.createElement('th');
     tr.appendChild(th);
 
-    th.textContent = `Total`
+    th.textContent = `Totals`
 
 
-    for (let j = 0; j < 14; j++) {
+    for (let j = 0; j < hours.length; j++) {
 
         total = 0
-        for (let x = 0; x < 5; x++) {
+        for (let x = 0; x < shop.length; x++) {
 
             total += shop[x].avgCookiesperHour[j]
             mega += shop[x].avgCookiesperHour[j]
@@ -142,12 +138,12 @@ function footer() {
 }
 
 for (let i = 0; i < shop.length; i++) {
-    // console.log(shop[i]);
+   
     shop[i].getRandCust();
     shop[i].avgcookie();
 
     shop[i].render();
-    // console.log(shop[i]);
+    
 
 }
 footer();
