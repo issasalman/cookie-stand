@@ -15,7 +15,7 @@ function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 let shop = [];
-console.log(shop);
+// console.log(shop);
 
 function Shop(location, min, max, avg) {
 
@@ -90,7 +90,7 @@ Shop.prototype.render = function () {
     let sum=0
     for (let i = 0; i < 14; i++) {
         
-        console.log(this.avgCookiesperHour[i]);
+        // console.log(this.avgCookiesperHour[i]);
         td = document.createElement('td');
         tr.appendChild(td);
         td.textContent = this.avgCookiesperHour[i]
@@ -106,14 +106,15 @@ Shop.prototype.render = function () {
     
 }
 
-
+let ftr
 function footer() {
     let total;
+    
     let mega = 0
-    tr = document.createElement('tr');
-    table.appendChild(tr);
+    ftr = document.createElement('tr');
+    table.appendChild(ftr);
     th = document.createElement('th');
-    tr.appendChild(th);
+    ftr.appendChild(th);
 
     th.textContent = `Totals`
 
@@ -128,12 +129,12 @@ function footer() {
 
         }
         th = document.createElement('th');
-        tr.appendChild(th);
+        ftr.appendChild(th);
         th.textContent = total;
 
     }
     th = document.createElement('th');
-    tr.appendChild(th);
+    ftr.appendChild(th);
     th.textContent = mega;
 }
 
@@ -146,5 +147,40 @@ for (let i = 0; i < shop.length; i++) {
     
 
 }
-footer();
+
    
+
+let form=document.getElementById('form');
+form.addEventListener('submit',formSubmitter);
+
+function formSubmitter(event) {
+    event.preventDefault();
+   
+    let location=event.target.location.value; 
+    let min=parseInt(event.target.min.value);
+    let max=parseInt(event.target.max.value);
+    let avg=parseInt(event.target.avg.value);
+    let newLocation = new Shop(location, min, max, avg);
+console.log(event.target.min.value);
+console.log(event.target.max.value);
+console.log(typeof(event.target.avg.value));
+    ftr.textContent = ` `
+    
+    
+    newLocation.getRandCust()
+    newLocation.avgcookie()
+    newLocation.render()
+    console.log(newLocation.randCust); 
+
+footer();
+}
+
+
+
+
+
+
+
+footer();
+
+
