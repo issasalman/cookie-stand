@@ -159,11 +159,11 @@ function formSubmitter(event) {
     let location=event.target.location.value; 
     let min=parseInt(event.target.min.value);
     let max=parseInt(event.target.max.value);
-    let avg=parseInt(event.target.avg.value);
+    let avg=parseFloat(event.target.avg.value);
     let newLocation = new Shop(location, min, max, avg);
-console.log(event.target.min.value);
-console.log(event.target.max.value);
-console.log(typeof(event.target.avg.value));
+    
+    
+    
     ftr.textContent = ` `
     
     
