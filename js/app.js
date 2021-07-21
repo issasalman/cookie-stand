@@ -18,7 +18,6 @@ let shop = [];
 // console.log(shop);
 
 function Shop(location, min, max, avg) {
-
   this.location = location,
   this.min = min;
   this.max = max;
@@ -174,12 +173,6 @@ function formSubmitter(event) {
 
   footer();
 }
-
-
-
-
-
-
 
 footer();
 
