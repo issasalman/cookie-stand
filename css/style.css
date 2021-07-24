@@ -1,35 +1,141 @@
-* {
-    font-family: Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap');
+
+
+h1,h2,h3,h4,h5 {
+  font-family: 'Ubuntu', sans-serif;
+  color: #6F0000;
   }
   
+  p{
+font-family: Georgia, 'Times New Roman';
+color: #280F34;
+
+
+    }
+
+   .li {
+    color:#FF5200;
+    font-family: 'Otomanopee One', sans-serif;
+    
+   
+    }
+
+
+    header nav{
+      
+      justify-content: center;
+    
+      
+    }
+    header  img{
+      display: block;
+      width: 20%;
+      justify-content: center;
+      margin:10px auto;
+
+    }
   
+
+
+
+
   table,tr,th,td{
     border: 1px solid black;
     border-collapse: collapse;
-    background-color: burlywood;
+    background-color: #865439;
+    font-family: Arial, sans-serif, Verdana;
+    color: #000000;
   }
   
 
-  tr td{
-    background-color: goldenrod;
+  tr td {
+    background-color: #402218;
+    color:darkgoldenrod;
   }
 body{
   margin-left: 50px;
   margin-right: 50px;
+  background-color: #FFDD93;
 }
-header{
 
-  
-}
-nav a{
-
+ nav ul li a{ 
+padding: 5px;
   background: coral;
   text-decoration: none;
-  color:darkslateblue;
-  width: 90px;
-  height: 25px;
-  display: block;
-  border:solid rgb(85, 78, 78) 7px;
-  padding:5px
-}
+  color:white;
+ justify-content: center;
+  display: inline;
+  border:solid rgb(85, 78, 78) 2px;
+
+
+ 
+} 
+
+
   
+#top ul li{
+position: relative;
+  display: inline;
+  
+ 
+}
+#top{
+  width: 50%;
+}
+
+
+#salmon{
+
+
+  text-align: center;
+}
+#family{
+
+  width: 100%;
+}
+#ft{
+  text-align: center;
+}
+#topright{
+  position: relative;
+  float: right;
+  bottom:40px
+}
+
+#ul{
+  
+}
+.fa {
+  padding: 10px;
+  font-size: 30px;
+  width: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+  background: coral;
+  color: white;
+  border:solid rgb(85, 78, 78) 2px;
+}
+
+/* Twitter */
+.fa-twitter {
+  background: coral;
+  color: white;
+  border:solid rgb(85, 78, 78) 2px;
+}
+.fa-snapchat-ghost {
+  background: coral;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  border:solid rgb(85, 78, 78) 2px;
