@@ -13,6 +13,20 @@ color: #280F34;
 
 
     }
+    #form{
+background-color:blanchedalmond ;
+
+
+
+    }
+    input{
+      background-color:darkgrey ;
+      color:red
+    }
+    label{
+
+      color:rgb(31, 13, 0)
+    }
 
    .li {
     color:#FF5200;

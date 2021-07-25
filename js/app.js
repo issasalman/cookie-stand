@@ -59,6 +59,8 @@ let td;
 let parent = document.getElementById('seatle');
 let table = document.createElement('table');
 parent.appendChild(table);
+
+
 function header() {
   tr = document.createElement('tr');
   table.appendChild(tr);
@@ -66,7 +68,7 @@ function header() {
   tr.appendChild(th);
   th.textContent = '';
 
-  for (let i = 0; i < 14; i++) {
+  for (let i = 0; i < hours.length; i++) {
     th = document.createElement('th');
     tr.appendChild(th);
     th.textContent = hours[i];
@@ -87,7 +89,7 @@ Shop.prototype.render = function () {
 
   th.textContent = this.location;
   let sum=0;
-  for (let i = 0; i < 14; i++) {
+  for (let i = 0; i < hours.length; i++) {
 
     // console.log(this.avgCookiesperHour[i]);
     td = document.createElement('td');
@@ -137,6 +139,7 @@ function footer() {
   th.textContent = mega;
 }
 
+
 for (let i = 0; i < shop.length; i++) {
 
   shop[i].getRandCust();
@@ -159,6 +162,7 @@ function formSubmitter(event) {
   let min=parseInt(event.target.min.value);
   let max=parseInt(event.target.max.value);
   let avg=parseFloat(event.target.avg.value);
+
   let newLocation = new Shop(location, min, max, avg);
 
 
@@ -169,7 +173,6 @@ function formSubmitter(event) {
   newLocation.getRandCust();
   newLocation.avgcookie();
   newLocation.render();
-  console.log(newLocation.randCust);
 
   footer();
 }
