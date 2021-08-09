@@ -9,12 +9,53 @@ for (let i = 1; i < 8; i++) {
 
 }
 
-
+let newShop=[];
 // this is from w3Schooles
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+
+
+function set(){
+  localStorage.setItem('shop', JSON.stringify(newShop));
+
+}
+
+
+function get(){
+
+  let data = localStorage.getItem('shop');
+  let parsArr=JSON.parse(data)
+if (parsArr !==null){
+for (let i = 0; i < parsArr.length; i++) {
+ 
+  newShop.push(new Shop(parsArr[i].location,parsArr[i].min,parsArr[i].max,parsArr[i].avg))
+  
+}
+
+
+
+}
+
+
+}
+
+
+
+console.log(newShop);
+
+
+
+
+
+
+
+
+
 let shop = [];
+
+
 // console.log(shop);
 
 function Shop(location, min, max, avg) {
@@ -25,13 +66,18 @@ function Shop(location, min, max, avg) {
   this.randCust = [];
   this.avgCookiesperHour = [];
   shop.push(this);
+  
+//  this.getRandCust()
+//  this.avgcookie()
+//   this.render();
+  
 }
 
-let Seattle = new Shop('Seattle', 23, 65, 6.3);
-let Tokyo = new Shop('Tokyo', 3, 24, 1.2);
-let Dubai = new Shop('Dubai', 11, 38, 3.7);
-let Paris = new Shop('Paris', 20, 38, 2.3);
-let Lima = new Shop('Lima', 2, 16, 4.6);
+new Shop('Seattle', 23, 65, 6.3);
+new Shop('Tokyo', 3, 24, 1.2);
+ new Shop('Dubai', 11, 38, 3.7);
+ new Shop('Paris', 20, 38, 2.3);
+ new Shop('Lima', 2, 16, 4.6);
 
 
 
@@ -82,6 +128,7 @@ function header() {
 header();
 
 Shop.prototype.render = function () {
+  
   tr = document.createElement('tr');
   table.appendChild(tr);
   th = document.createElement('th');
@@ -140,16 +187,6 @@ function footer() {
 }
 
 
-for (let i = 0; i < shop.length; i++) {
-
-  shop[i].getRandCust();
-  shop[i].avgcookie();
-
-  shop[i].render();
-
-
-}
-
 
 
 let form=document.getElementById('form');
@@ -164,20 +201,40 @@ function formSubmitter(event) {
   let avg=parseFloat(event.target.avg.value);
 
   let newLocation = new Shop(location, min, max, avg);
-
-
-
+ 
+  newShop.push(newLocation)
+  set()
+  
+console.log('hi',newLocation);
+console.log('bye',newShop);
+  
+  
   ftr.textContent = ' ';
-
+  
 
   newLocation.getRandCust();
   newLocation.avgcookie();
   newLocation.render();
-
+  
   footer();
+  
+  
 }
 
+
+
+
+
+
+
+get();
+for (let i = 0; i < shop.length; i++) {
+
+  shop[i].getRandCust();
+  shop[i].avgcookie();
+
+  shop[i].render();
+  
+  
+}
 footer();
-
-
-// hello 
